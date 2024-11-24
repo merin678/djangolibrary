@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row mt-3">
+    <div class="col-12 text-center">
+        <img src="{{cat.image.url }}" height="320px" width="100%" >
+    </div>
+</div>
+
+<div class="container mt-5" style="margin-bottom:100px">
+    <div class="row">
+        {% for i in product %}
+        <div class="col-sm-4 mb-4"> <!-- Add mb-4 for margin-bottom -->
+            <div class="card mx-auto" style="width:15rem;">
+                <img src="{{ i.image.url }}" height="150px" width="100%" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">{{ i.name }}</h5>
+                    <a href="{% url 'shop:details' id=i.id %}" class="btn btn-info px-5 mb-2 fs-5">Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

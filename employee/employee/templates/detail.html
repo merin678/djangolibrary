@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  body{
+  background-color:#3A6D8C}
+</style>
+<div class="container mt-4">
+    <h2 class="text-center">Details</h2>
+  <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src=" {{employee.image.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title text-dark">{{employee.ename}}</h5>
+        <p class="card-text text-dark">{{employee.age}}</p>
+        <p class="card-text text-dark">{{employee.address}}</p>
+
+        <a href="{% url 'app1:edit' employee.id %}" class="btn btn-danger">Edit</a>
+        <a href="{% url 'app1:delete' employee.id %}" class="btn btn-danger">Delete</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

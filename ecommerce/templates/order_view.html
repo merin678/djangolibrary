@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="mt-3 text-center" style="color:#0dc6ff;">Your Orders</h1>
+
+<div class="container mt-5 mb-5">
+    <h6 class="text-center">Customer Name: <strong>{{ user.username }}</strong></h6>
+    <div class="row">
+        {% for i in order %}
+        <div class="col-12 mb-4">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img class="img-fluid" src="{{ i.product.image.url }}" alt="Product image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ i.product.name }}</h5>
+                            <h6 class="card-subtitle mb-2 "><strong>Price:</strong> <span class="text-info">{{ i.product.price }}</span></h6>
+                            <h6 class="card-text"><strong>Quantity:</strong> {{ i.no_of_items }}</h6>
+                            <h6 class="card-text"><strong>Address,Pin:</strong> {{ i.address }},{{ i.pin }}</h6>
+                            <h6 class="card-text"><strong>Phone No:</strong> {{ i.phone_no }}</h6>
+                            <h6 class="card-text"><strong>Order ID:</strong> {{ i.order_id }}</h6>
+                            <h6 class="card-text"><strong>Payment Status:</strong> {{ i.payment_status }}</h6>
+                            <h6 class="card-text"><strong>Delivery Status:</strong> <span class="text-danger">{{ i.deliver_status }}</span></h6>
+                            <h6 class="card-text"><small class="text-muted">Ordered on {{ i.ordered_date }}</small></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

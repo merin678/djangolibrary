@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="mt-3 text-center" style="color:#0dc6ff;">Order Page</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Address</label>
+        <input type="text" class="form-control" name="a" placeholder="Enter Address">
+      </div>
+    <div class="mb-3">
+        <label class="form-label">Pincode</label>
+        <input type="text" class="form-control" name="pi" placeholder="Enter Pincode">
+      </div>
+<div class="mb-3">
+        <label class="form-label">Phone number</label>
+        <input type="text" class="form-control" name="p" placeholder="Enter phone number">
+      </div>
+
+      <input type="submit" class="btn btn-dark"></input>
+    </form>
+  </div>
+</div>
+</form>
+
+{% endblock %}

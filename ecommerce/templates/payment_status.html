@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1 class="mb-4" style="color:#0dc6ff;">Payment Successful</h1>
+            <div class="card shadow">
+                <div class="card-body">
+                    {% if status == True %}
+                    <h5 class="card-title">Thank You!</h5>
+                    <p class="card-text">Your payment has been processed successfully.</p>
+                    {% else %}
+                    <p class="card-text" style="color:red;">Your payment has not been completed.<br> Payment process terminated.</p>
+                    {% endif %}
+                    <a href="{% url 'shop:categories' %}" class="btn btn-info">Go to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

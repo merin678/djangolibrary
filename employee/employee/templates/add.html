@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <h2 class="text-center">Add Employee</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+"
+    <div class="mb-3">
+  <label  class="form-label">Ename</label>
+  <input type="text" class="form-control" name="e" placeholder="Enter the name">
+</div>
+     <div class="mb-3">
+  <label  class="form-label">Age</label>
+  <input type="number" class="form-control" name="a"  placeholder="Enter the age">
+</div>
+     <div class="mb-3">
+  <label  class="form-label">Address</label>
+  <input type="text" class="form-control" name="ad" placeholder="Enter the address">
+</div>
+         <div class="mb-3">
+  <label  class="form-label">Email</label>
+  <input type="email" class="form-control" name="em" placeholder="Enter the email id">
+</div>
+    <div class="mb-3">
+  <label  class="form-label">Image</label>
+  <input type="file" class="form-control" name="i"  >
+</div>
+        <div class="mb-3">
+
+  <input type="submit"  value="Add Employee">
+</div>
+    </form>
+
+
+
+</div>
+{% endblock %}

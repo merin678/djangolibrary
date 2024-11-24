@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1 class="mt-3 text-center" style="color:#0dc6ff;">Enter Book Details</h1>
+
+  <div class="container mt-5" style="max-width: 550px;">
+
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label" style="color:#F8F4E1; font-size: 20px;">Title</label>
+        <input type="text" class="form-control" name="t" placeholder="Enter book title">
+      </div>
+
+      <div class="mb-3">
+        <label  class="form-label" style="color:#F8F4E1; font-size: 20px;">Author</label>
+        <input type="text" class="form-control " name="a" placeholder="Enter author's name">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" style="color:#F8F4E1; font-size: 20px;">Pages</label>
+        <input type="number" class="form-control" name="pg" placeholder="Enter number of pages">
+      </div>
+
+      <div class="mb-3">
+        <label  class="form-label" style="color:#F8F4E1; font-size: 20px;">Price</label>
+        <input type="number"  class="form-control" name="pr" placeholder="Enter price">
+      </div>
+
+     <div class="mb-3">
+    <label class="form-label" style="color:#F8F4E1; font-size: 20px;" >Language</label>
+    <input type="text" class="form-control" name="l"  placeholder="enter language">
+  </div>
+          <div class="mb-3">
+        <label  class="form-label" style="color:#F8F4E1; font-size: 20px;">Cover</label>
+        <input type="file" class="form-control " name="i">
+      </div>
+
+
+          <div class="mb-3">
+        <label  class="form-label" style="color:#F8F4E1; font-size: 20px;">Pdf</label>
+        <input type="file" class="form-control " name="f">
+      </div>
+
+      <button type="submit" value="Add" class="btn btn-dark">Submit</button>
+    </form>
+  </div>
+
+{% endblock %}

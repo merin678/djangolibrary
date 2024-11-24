@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+<div class="card mb-3  mx-auto text-light" style="max-width: 640px;  background-color:black;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{book.cover.url}}" class="img-fluid rounded-start p-3" style="height:300px; width:100%;" alt="...">
+    </div>
+    <div class="col-md-7 mt-5">
+      <div class="card-body">
+        <h5 class="card-title">{{book.title}}</h5>
+        <p class="card-text">{{book.author}}</p>
+        <p class="card-text"><small class="text-secondary">{{book.language}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

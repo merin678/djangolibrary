@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    body{
+    background-color:#3A6D8C
+    }
+</style>
+<div class="container mt-4 ">
+    <h2 class="text-center">Home Page</h2>
+    <div class="container">
+        <div class="row">
+            {% for i in employee %}
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                     <img src="{{i.image.url}}" height="50%" class="card-img-top " alt="..." >
+
+
+  <div class="card-body">
+    <h5 class="card-title text-dark">{{i.ename}}</h5>
+    <p class="card-text text-dark">{{i.age}}</p>
+      <p class="card-text text-dark">{{i.address}}</p>
+
+
+    <a href="{% url 'app1:detail'  i.id%}" class="btn btn-primary">Details</a>
+  </div>
+
+</div>
+
+
+
+
+
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+
+    </div>
+</div>
+{% endblock %}

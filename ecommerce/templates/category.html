@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row mt-3">
+    <div class="col-12 text-center">
+        <img src="{% static 'images/banner.jpg' %}"  width="100%" >
+    </div>
+</div>
+<div class="row mt-3" style="margin-bottom:100px">
+    <div class="col-12 ">
+        <h3 class="text-center fw-bold">Our collections</h3>
+        <p style="text-align:center">gyfg edf  gfygfyefg  feu fhffu  fyhegf ehfge fffefgfgeyf hffhf hjf hj ff fyhffef ffff yf efffg eyffgy fgf gg </p>
+    </div>
+</div>
+
+<div class="container mt-5" style="margin-bottom:100px">
+    <div class="row">
+        {% for i in cat %}
+
+        <div class="card bg-transparent text-gray col-sm-4 mb-4">
+            <img src="{{ i.image.url }}" class="card-img" height="250px" alt="{{ i.name }}">
+            <div class="card-img-overlay">
+                <h5 class="card-title fs-2">{{ i.name }}</h5>
+                <p class="card-text">{{ i.desc }}</p>
+                <a href="{% url 'shop:products' id=i.id %}" class="btn btn-info text-white  mb-2 fs-4 position-absolute bottom-0 end-0 m-4" style="font-color:white;">More</a>
+            </div>
+<!--            <a href="{% url 'shop:products' id=i.id %}" class="btn btn-info px-5 mb-2 fs-5 mt-5">More</a>-->
+        </div>
+
+<!--        <div class="col-sm-4 mb-4"> &lt;!&ndash; Add mb-4 for margin-bottom &ndash;&gt;-->
+<!--            <div class="card mx-auto" style="width:15rem;">-->
+<!--                <img src="{{i.image.url}}" height="180px" width="100%" class="card-img-top">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title mb-3">{{ i.name }}</h5>-->
+<!--                    <a href="{% url 'shop:products' id=i.id %}" class="btn btn-info px-5 mb-2 fs-5">more</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

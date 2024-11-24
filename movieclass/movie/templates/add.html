@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<h2 class="text-center">ADD movies</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+<!--<div class="mb-3">-->
+<!--  <label  class="form-label">Movie name</label>-->
+<!--  <input type="text" class="form-control" style="width:300px" placeholder="Enter moviename" name="title">-->
+<!--</div>-->
+<!--<div class="mb-3">-->
+<!--  <label  class="form-label">Movie description</label>-->
+<!--  <textarea id="description" style="width:300px;" class="form-control" placeholder="Enter description of the movie" name="description"></textarea>-->
+<!--</div>-->
+<!--<div class="mb-3">-->
+<!--  <label  class="form-label">Year released</label>-->
+<!--  <input type="number" style="width:300px;" class="form-control" placeholder="enter the year" name="year">-->
+<!--</div>-->
+<!--<div class="mb-3">-->
+<!--  <label  class="form-label">language</label>-->
+<!--  <input type="text" style="width:300px;" class="form-control" placeholder="enter the language of movie" name="language">-->
+<!--</div>-->
+<!--  <div class="mb-3">-->
+<!--  <label class="form-label">movie cover</label>-->
+<!--  <input type="file" style="width:300px;" class="form-control"  placeholder="cover of the movie" name="img">-->
+<!--</div>-->
+
+<!--<div class="mb-3">-->
+
+<!--  <input type="submit" style="width:300px;" class="form-control btn btn-primary" name="add" value="add movie">-->
+<!--</div>-->
+  <table>
+  {{form.as_table}}</table>
+  <input type="submit">
+
+  </form>
+
+{% endblock %}
